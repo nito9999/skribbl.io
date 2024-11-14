@@ -1222,7 +1222,7 @@
     $n.prototype.addSound = function(e, t) {
         this.sounds.set(e, new Dn(this, t))
     }, $n.prototype.loadSounds = function() {
-        this.addSound(kn, "/audio/roundStart.ogg"), this.addSound(wn, "/audio/roundEndSuccess.ogg"), this.addSound(Cn, "/audio/roundEndFailure.ogg"), this.addSound(qn, "/audio/join.ogg"), this.addSound(xn, "/audio/leave.ogg"), this.addSound(Mn, "/audio/playerGuessed.ogg"), this.addSound(Ln, "/audio/tick.ogg")
+        this.addSound(kn, "https://skribbl.io/audio/roundStart.ogg"), this.addSound(wn, "https://skribbl.io/audio/roundEndSuccess.ogg"), this.addSound(Cn, "https://skribbl.io/audio/roundEndFailure.ogg"), this.addSound(qn, "https://skribbl.io/audio/join.ogg"), this.addSound(xn, "https://skribbl.io/audio/leave.ogg"), this.addSound(Mn, "https://skribbl.io/audio/playerGuessed.ogg"), this.addSound(Ln, "https://skribbl.io/audio/tick.ogg")
     }, $n.prototype.playSound = function(e) {
         var t, n;
         null == this.context ? this.load() : "running" != this.context.state ? this.context.resume().then(function() {
