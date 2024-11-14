@@ -1359,8 +1359,6 @@
                             return E("You are banned from this room!");
                         case 5:
                             return E("You are joining rooms too quickly!");
-                        case 100:
-                            return E("You are already connected to this room!");
                         case 200:
                             return E("Too many users from your IP are connected to this room!");
                         case 300:
