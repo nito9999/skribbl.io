@@ -1905,14 +1905,22 @@
         g[s].querySelector(".buttons").style.display = "none", g[s].querySelector(".player").style.display = "none", g[s].querySelector(".report-menu").style.display = "";
         for (var e = g[s].querySelectorAll(".report-menu input"), t = 0; t < e.length; t++) e[t].checked = !1
     }), D(g[s].querySelector("button#report-send"), "click", function() {
-        var e = 0;
-        g[s].querySelector("#report-reason-toxic").checked && (e |= 1), g[s].querySelector("#report-reason-spam").checked && (e |= 2), g[s].querySelector("#report-reason-bot").checked && (e |= 4), 0 < e && (null != N && N.id != x && (N.reported = !0, S && S.emit("data", {
-            id: 6,
-            data: {
-                id: N.id,
-                reasons: e
-            }
-        }), y(E("Your report for '$' has been sent!", N.name), "", f(De), !0)), Me())
+       var e = 0;
+g[s].querySelector("#report-reason-toxic").checked && (e |= 1),
+g[s].querySelector("#report-reason-spam").checked && (e |= 2),
+g[s].querySelector("#report-reason-bot").checked && (e |= 4),
+0 < e && (
+    null != N && N.id != x && (
+        N.reported = !0,
+        S && S.emit("data", {
+            id: 4,
+            data: N.id
+        })   // <== open parenthesis above has no closing match here
+    )  // <== this closes the inner N check
+),     // <== this comma is invalid outside of an expression context
+y(E("Your report for '$' has been sent!", N.name), "", f(De), !0)
+),     // <== unmatched closing parenthesis
+Me())  // <== unmatched closing parenthesis
     }), D(g[p].querySelector("#volume input"), "change", function(e) {
         l.volume = e.target.value, T.setVolume(l.volume), T.playSound(Mn), se()
     }), D(g[p].querySelector("#select-pressure-sensitivity"), "change", function(e) {
